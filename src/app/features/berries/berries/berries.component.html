@@ -1,0 +1,10 @@
+<h1 class="mb-2">Berries</h1>
+<p>
+  Berries are small fruits that can provide HP and status condition restoration, stat enhancement, and even damage
+  negation when eaten by Pokémon. Check out
+  <a href="http://bulbapedia.bulbagarden.net/wiki/Berry" target="_blank">Bulbapedia</a> for greater detail.
+</p>
+
+<ng-container *ngIf="berries$ | async as berries">
+  <pre>{{ berries | json }}</pre>
+</ng-container>

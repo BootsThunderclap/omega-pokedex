@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BerriesService } from './berries.service';
+import { ListPageService } from './list-page.service';
 
-describe('BerriesService', () => {
-  let service: BerriesService;
+describe('ListPageService', () => {
+  let service: ListPageService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(BerriesService);
+    service = TestBed.inject(ListPageService);
   });
 
   it('should be created', () => {

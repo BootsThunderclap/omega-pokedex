@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
-import { ListResponse, ListOptions } from 'src/app/describe/poke-api-types';
+import { environment } from '@env/environment';
+import { ListResponse, ListOptions } from '@app/describe/poke-api-types';
 
 @Injectable({
   providedIn: 'root',

@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { BerriesRoutingModule } from './berries-routing.module';
 import { BerriesComponent } from './berries/berries.component';
-import { TableModule } from 'primeng/table';
 import { ListItemIdPipeModule } from '@app/pipes/list-item-id-pipe/list-item-id-pipe.module';
 import { BerryDetailComponent } from './berry-detail/berry-detail.component';
 import { MessagesModule } from 'primeng/messages';
@@ -12,19 +11,20 @@ import { CardModule } from 'primeng/card';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 import { BerryFirmnessesComponent } from './berry-firmnesses/berry-firmnesses.component';
+import { ListPageModule } from '@app/layouts/list-page/list-page.module';
 
 @NgModule({
   declarations: [BerriesComponent, BerryDetailComponent, BerryFirmnessesComponent],
   imports: [
     CommonModule,
     BerriesRoutingModule,
-    TableModule,
     ListItemIdPipeModule,
     MessagesModule,
     BreadcrumbModule,
     CardModule,
     RatingModule,
-    FormsModule
+    FormsModule,
+    ListPageModule
   ],
 })
 export class BerriesModule {}

@@ -30,7 +30,10 @@ export class AppMenuComponent implements OnInit {
         label: 'Berries',
         icon: 'fas fa-fw fa-holly-berry',
         routerLink: ['/berries'],
-        items: [{ label: 'Berries', routerLink: '/berries/berries' }],
+        items: [
+          { label: 'Berries', routerLink: '/berries/berries' },
+          { label: 'Berry Firmnesses', routerLink: '/berries/berry-firmnesses' },
+        ],
       },
     ];
   }

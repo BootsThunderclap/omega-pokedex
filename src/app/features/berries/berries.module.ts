@@ -11,9 +11,10 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { CardModule } from 'primeng/card';
 import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
+import { BerryFirmnessesComponent } from './berry-firmnesses/berry-firmnesses.component';
 
 @NgModule({
-  declarations: [BerriesComponent, BerryDetailComponent],
+  declarations: [BerriesComponent, BerryDetailComponent, BerryFirmnessesComponent],
   imports: [
     CommonModule,
     BerriesRoutingModule,

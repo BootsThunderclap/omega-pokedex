@@ -3,10 +3,10 @@ import { PokeapiService } from '@app/shared-modules/services/pokeapi.service';
 import { ListOptions } from '@app/describe/poke-api-types';
 
 @Injectable()
-export class BerriesService {
+export class BerryFirmnessesService {
   constructor(private apiService: PokeapiService) {}
 
-  getBerriesList(listOptions?: ListOptions) {
-    return this.apiService.list('berry', listOptions);
+  getBerryFirmnessesList(listOptions?: ListOptions) {
+    return this.apiService.list('berry-firmness', listOptions);
   }
 }

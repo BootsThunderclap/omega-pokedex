@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BerriesService } from './berries.service';
-import { NamedAPIResource, ListOptions } from 'src/app/describe/poke-api-types';
+import { NamedAPIResource, ListOptions } from '@app/describe/poke-api-types';
 import { LazyLoadEvent } from 'primeng';
 
 @Component({

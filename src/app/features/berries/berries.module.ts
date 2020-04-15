@@ -12,9 +12,10 @@ import { RatingModule } from 'primeng/rating';
 import { FormsModule } from '@angular/forms';
 import { BerryFirmnessesComponent } from './berry-firmnesses/berry-firmnesses.component';
 import { ListPageModule } from '@app/layouts/list-page/list-page.module';
+import { BerryFirmnessDetailComponent } from './berry-firmness-detail/berry-firmness-detail.component';
 
 @NgModule({
-  declarations: [BerriesComponent, BerryDetailComponent, BerryFirmnessesComponent],
+  declarations: [BerriesComponent, BerryDetailComponent, BerryFirmnessesComponent, BerryFirmnessDetailComponent],
   imports: [
     CommonModule,
     BerriesRoutingModule,

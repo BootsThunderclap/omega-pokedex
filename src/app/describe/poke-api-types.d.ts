@@ -34,3 +34,15 @@ export interface Berry {
   item: NamedAPIResource;
   natural_gift_type: NamedAPIResource;
 }
+
+export interface BerryFirmness {
+  id: number;
+  name: string;
+  berries: NamedAPIResource[];
+  names: Name[];
+}
+
+export interface Name {
+  name: string;
+  language: NamedAPIResource;
+}

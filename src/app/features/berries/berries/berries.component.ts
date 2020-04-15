@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { BerriesService } from './berries.service';
+import { ListItem, ListOptions } from 'src/app/describe/poke-api-types';
+import { LazyLoadEvent } from 'primeng';
 
 @Component({
   selector: 'app-berries',
@@ -7,10 +9,23 @@ import { BerriesService } from './berries.service';
   styleUrls: ['./berries.component.scss'],
   providers: [BerriesService],
 })
-export class BerriesComponent implements OnInit {
-  berries$ = this.berriesService.results;
+export class BerriesComponent {
+  berries: ListItem[];
+  totalRecords: number;
+  loading = true;
 
   constructor(private berriesService: BerriesService) {}
 
-  ngOnInit(): void {}
+  loadBerriesLazy(event: LazyLoadEvent) {
+    this.loading = true;
+    const listOptions: ListOptions = {
+      limit: event.rows || 20,
+      offset: event.first || 0,
+    };
+    this.berriesService.getBerriesList(listOptions).subscribe(response => {
+      this.berries = response.results;
+      this.totalRecords = response.count;
+      this.loading = false;
+    });
+  }
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BerriesService } from './berries.service';
-import { ListItem, ListOptions } from 'src/app/describe/poke-api-types';
+import { NamedAPIResource, ListOptions } from 'src/app/describe/poke-api-types';
 import { LazyLoadEvent } from 'primeng';
 
 @Component({
@@ -10,7 +10,7 @@ import { LazyLoadEvent } from 'primeng';
   providers: [BerriesService],
 })
 export class BerriesComponent {
-  berries: ListItem[];
+  berries: NamedAPIResource[];
   totalRecords: number;
   loading = true;
 

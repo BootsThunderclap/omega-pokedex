@@ -1,0 +1,70 @@
+<p-breadcrumb [model]="breadcrumb" [home]="home"></p-breadcrumb>
+<ng-container *ngIf="berry">
+  <h3 class="mt-2 mb-2">{{ berry!.name | titlecase }}</h3>
+  <p-card styleClass="mb-2">
+    <div class="row">
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Firmness</h2>
+        <div>
+          <a [routerLink]="['/berries/berry-firmnesses', berry!.firmness.url | listItemId]">{{
+            berry!.firmness.name | titlecase
+          }}</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Flavors</h2>
+        <div *ngFor="let flavor of berry!.flavors">
+          <a [routerLink]="['/berries/berry-flavors', flavor.flavor.url | listItemId]">{{
+            flavor.flavor.name | titlecase
+          }}</a>
+          <p-rating [ngModel]="flavor.potency" readonly="true" stars="10" [cancel]="false"></p-rating>
+        </div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Growth Time</h2>
+        <div>{{ berry!.growth_time }} hours</div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>ID</h2>
+        <div>{{ berry!.id }}</div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Item</h2>
+        <div>
+          <a [routerLink]="['/items/items', berry!.item.url | listItemId]">{{ berry!.item.name | titlecase }}</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Max Harvest</h2>
+        <div>{{ berry!.max_harvest }}</div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Natural Gift Power</h2>
+        <div>{{ berry!.natural_gift_power }}</div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Natural Gift Type</h2>
+        <div>
+          <a [routerLink]="['/pokemon/types', berry!.natural_gift_type.url | listItemId]">{{
+            berry!.natural_gift_type.name | titlecase
+          }}</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Size</h2>
+        <div>{{ berry!.size }} mm</div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Smoothness</h2>
+        <div>{{ berry!.smoothness }}</div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Soil Dryness</h2>
+        <div>{{ berry!.soil_dryness }}</div>
+      </div>
+    </div>
+  </p-card>
+</ng-container>
+<ng-container *ngIf="errors.length">
+  <p-messages [(value)]="errors" [closable]="false"></p-messages>
+</ng-container>

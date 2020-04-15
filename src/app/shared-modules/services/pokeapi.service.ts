@@ -14,4 +14,8 @@ export class PokeapiService {
       `${environment.pokeapi_url}/${schemaName}?limit=${listOptions.limit}&offset=${listOptions.offset}`
     );
   }
+
+  item(schemaName: string, id: string) {
+    return this.http.get<any>(`${environment.pokeapi_url}/${schemaName}/${id}`);
+  }
 }

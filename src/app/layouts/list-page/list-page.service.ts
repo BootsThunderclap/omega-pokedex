@@ -1,12 +1,24 @@
 import { Injectable } from '@angular/core';
-import { PokeapiService } from '@app/shared-modules/services/pokeapi.service';
-import { ListOptions } from '@app/describe/poke-api-types';
+import { Store } from '@ngxs/store';
+import { GetSchemaList, CacheState } from '@app/state/app-cache';
+import { map, catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
+import cloneDeep from 'lodash-es/cloneDeep';
 
 @Injectable()
 export class ListPageService {
-  constructor(private apiService: PokeapiService) {}
+  constructor(private store: Store) {}
 
-  getList(schema: string, listOptions?: ListOptions) {
-    return this.apiService.list(schema, listOptions);
+  getList(schema: string) {
+    return this.store.dispatch(new GetSchemaList(schema)).pipe(
+      map(() => {
+        const state = this.store.selectSnapshot(CacheState.listState(schema));
+        if (!state) {
+          throw new ReferenceError('There was an error retrieving list data');
+        }
+        return cloneDeep(state.data);
+      }),
+      catchError(error => throwError(error))
+    );
   }
 }

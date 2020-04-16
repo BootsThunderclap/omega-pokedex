@@ -1,14 +1,19 @@
 ::ng-deep .ui-table-items {
-    .ui-paginator {
-      border: 0 none;
-      padding: 1em;
+  .ui-paginator {
+    border: 0 none;
+    padding: 1em;
 
-      .ui-dropdown {
-        float: left;
-      }
+    .ui-dropdown {
+      float: left;
+    }
 
-      .ui-paginator-current {
-        float: right;
-      }
+    .ui-paginator-current {
+      float: right;
     }
   }
+
+  .ui-column-filter {
+    display: block;
+    width: 100%;
+  }
+}

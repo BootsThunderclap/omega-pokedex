@@ -10,9 +10,10 @@ import { CardModule } from 'primeng/card';
 import { ListItemIdPipeModule } from '@app/pipes/list-item-id-pipe/list-item-id-pipe.module';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { MessagesModule } from 'primeng/messages';
+import { ContestEffectsComponent } from './contest-effects/contest-effects.component';
 
 @NgModule({
-  declarations: [ContestTypesComponent, ContestTypeDetailComponent],
+  declarations: [ContestTypesComponent, ContestTypeDetailComponent, ContestEffectsComponent],
   imports: [
     CommonModule,
     ContestsRoutingModule,

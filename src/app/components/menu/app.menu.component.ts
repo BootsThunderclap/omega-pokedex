@@ -40,7 +40,10 @@ export class AppMenuComponent implements OnInit {
         label: 'Contests',
         icon: 'fas fa-fw fa-burn',
         routerLink: ['/contests'],
-        items: [{ label: 'Contest Types', routerLink: ['/contests/contest-types'] }],
+        items: [
+          { label: 'Contest Types', routerLink: ['/contests/contest-types'] },
+          { label: 'Contest Effects', routerLink: ['/contests/contest-effects'] },
+        ],
       },
     ];
   }

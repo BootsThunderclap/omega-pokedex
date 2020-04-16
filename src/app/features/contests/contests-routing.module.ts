@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ContestTypesComponent } from './contest-types/contest-types.component';
 import { ContestTypeDetailComponent } from './contest-type-detail/contest-type-detail.component';
 import { ListItemResolver } from '@app/resolvers/list-item.resolver';
+import { ContestEffectsComponent } from './contest-effects/contest-effects.component';
 
 const routes: Routes = [
   { path: 'contest-types', component: ContestTypesComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
     resolve: { resolvedItem: ListItemResolver },
     data: { schema: 'contest-type' },
   },
+  { path: 'contest-effects', component: ContestEffectsComponent },
   { path: '', redirectTo: 'contest-types', pathMatch: 'full' },
 ];
 

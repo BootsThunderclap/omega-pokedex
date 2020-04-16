@@ -1,0 +1,39 @@
+<p-breadcrumb [model]="breadcrumb" [home]="home"></p-breadcrumb>
+<ng-container *ngIf="berryFlavor">
+  <h3 class="mt-2 mb-2">{{ berryFlavor!.name | titlecase }}</h3>
+  <p-card styleClass="mb-2">
+    <div class="row">
+      <div class="col-12 col-md-3 mb-3">
+        <h2>ID</h2>
+        <div>{{ berryFlavor!.id }}</div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Berries</h2>
+        <div *ngFor="let berry of berryFlavor!.berries">
+          <a [routerLink]="['/berries/berries', berry.berry.url | listItemId]">{{ berry.berry.name | titlecase }}</a>
+          <p-progressBar [value]="berry.potency"></p-progressBar>
+        </div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Contest Type</h2>
+        <div>
+          <a [routerLink]="['/contests/contest-types', berryFlavor!.contest_type.url | listItemId]">{{
+            berryFlavor!.contest_type.name | titlecase
+          }}</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Names</h2>
+        <div *ngFor="let name of berryFlavor!.names">
+          <a [routerLink]="['/utility/languages', name.language.url | listItemId]">{{
+            name.language.name | uppercase
+          }}</a>
+          - {{ name.name }}
+        </div>
+      </div>
+    </div>
+  </p-card>
+</ng-container>
+<ng-container *ngIf="errors.length">
+  <p-messages [(value)]="errors" [closable]="false"></p-messages>
+</ng-container>

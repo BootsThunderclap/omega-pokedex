@@ -42,6 +42,19 @@ export interface BerryFirmness {
   names: Name[];
 }
 
+export interface FlavorBerryMap {
+  potency: number;
+  berry: NamedAPIResource;
+}
+
+export interface BerryFlavor {
+  id: number;
+  name: string;
+  berries: FlavorBerryMap[];
+  contest_type: NamedAPIResource;
+  names: Name[];
+}
+
 export interface Name {
   name: string;
   language: NamedAPIResource;

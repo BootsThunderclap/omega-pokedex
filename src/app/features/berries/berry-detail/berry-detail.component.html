@@ -17,7 +17,7 @@
           <a [routerLink]="['/berries/berry-flavors', flavor.flavor.url | listItemId]">{{
             flavor.flavor.name | titlecase
           }}</a>
-          <p-rating [ngModel]="flavor.potency" readonly="true" stars="10" [cancel]="false"></p-rating>
+          <p-progressBar [value]="flavor.potency"></p-progressBar>
         </div>
       </div>
       <div class="col-12 col-md-3 mb-3">

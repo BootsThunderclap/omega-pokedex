@@ -6,6 +6,7 @@ import { ListItemResolver } from '@app/resolvers/list-item.resolver';
 import { BerryFirmnessesComponent } from './berry-firmnesses/berry-firmnesses.component';
 import { BerryFirmnessDetailComponent } from './berry-firmness-detail/berry-firmness-detail.component';
 import { BerryFlavorsComponent } from './berry-flavors/berry-flavors.component';
+import { BerryFlavorDetailComponent } from './berry-flavor-detail/berry-flavor-detail.component';
 
 const routes: Routes = [
   { path: 'berries', component: BerriesComponent },
@@ -23,6 +24,12 @@ const routes: Routes = [
     data: { schema: 'berry-firmness' },
   },
   { path: 'berry-flavors', component: BerryFlavorsComponent },
+  {
+    path: 'berry-flavors/:recordId',
+    component: BerryFlavorDetailComponent,
+    resolve: { resolvedItem: ListItemResolver },
+    data: { schema: 'berry-flavor' },
+  },
   { path: '', redirectTo: 'berries', pathMatch: 'full' },
 ];
 

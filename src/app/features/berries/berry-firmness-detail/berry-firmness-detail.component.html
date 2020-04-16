@@ -25,3 +25,6 @@
     </div>
   </p-card>
 </ng-container>
+<ng-container *ngIf="errors.length">
+  <p-messages [(value)]="errors" [closable]="false"></p-messages>
+</ng-container>

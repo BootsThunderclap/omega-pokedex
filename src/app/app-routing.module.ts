@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: () => import('./features/berries/berries.module').then(m => m.BerriesModule),
   },
   { path: 'contests', loadChildren: () => import('./features/contests/contests.module').then(m => m.ContestsModule) },
+  {
+    path: 'encounters',
+    loadChildren: () => import('./features/encounters/encounters.module').then(m => m.EncountersModule),
+  },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 

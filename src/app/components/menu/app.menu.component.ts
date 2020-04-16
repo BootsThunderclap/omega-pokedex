@@ -46,6 +46,12 @@ export class AppMenuComponent implements OnInit {
           { label: 'Super Contest Effects', routerLink: ['/contests/super-contest-effects'] },
         ],
       },
+      {
+        label: 'Encounters',
+        icon: 'fas fa-fw fa-bomb',
+        routerLink: ['/encounters'],
+        items: [{ label: 'Encounter Methods', routerLink: ['/encounters/encounter-methods'] }],
+      },
     ];
   }
 }

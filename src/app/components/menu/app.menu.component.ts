@@ -56,6 +56,12 @@ export class AppMenuComponent implements OnInit {
           { label: 'Encounter Condition Values', routerLink: ['/encounters/encounter-condition-values'] },
         ],
       },
+      {
+        label: 'Evolution',
+        icon: 'fas fa-fw fa-level-up-alt',
+        routerLink: ['/evolution'],
+        items: [{ label: 'Evolution Chains', routerLink: ['/evolution/evolution-chains'] }],
+      },
     ];
   }
 }

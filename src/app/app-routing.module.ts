@@ -16,6 +16,10 @@ const routes: Routes = [
     path: 'encounters',
     loadChildren: () => import('./features/encounters/encounters.module').then(m => m.EncountersModule),
   },
+  {
+    path: 'evolution',
+    loadChildren: () => import('./features/evolution/evolution.module').then(m => m.EvolutionModule),
+  },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 

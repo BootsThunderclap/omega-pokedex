@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { PokeapiService } from '../shared-modules/services/pokeapi.service';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
-import { catchError, map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
+import { Store } from '@ngxs/store';
+import { GetRecordById, CacheState } from '@app/state/app-cache';
 import { of } from 'rxjs';
-import { HttpErrorResponse } from '@angular/common/http';
 
 export interface ListItemResolved {
   listItem?: any;
@@ -14,20 +14,25 @@ export interface ListItemResolved {
   providedIn: 'root',
 })
 export class ListItemResolver implements Resolve<ListItemResolved> {
-  constructor(private apiService: PokeapiService) {}
+  constructor(private store: Store) {}
 
   resolve(route: ActivatedRouteSnapshot) {
     const schema = route.data.schema;
-    const recordId = route.paramMap.get('recordId');
-    if (!schema || !recordId) {
+    const recordIdStr = route.paramMap.get('recordId');
+    if (!schema || !recordIdStr) {
       return { error: 'Schema or recordId could not be retrieved from the route' };
     }
-    return this.apiService.item(schema, recordId).pipe(
-      map(response => {
-        return { listItem: response };
+    const recordId = parseInt(recordIdStr, 10);
+    return this.store.dispatch(new GetRecordById(schema, recordId)).pipe(
+      map(() => {
+        const state = this.store.selectSnapshot(CacheState.recordState(schema, recordId));
+        if (!state) {
+          return { error: 'Could not resolve record from state' };
+        }
+        return { listItem: state.data };
       }),
-      catchError((error: HttpErrorResponse) => {
-        return of({ error: error.error });
+      catchError(error => {
+        return of({ error });
       })
     );
   }

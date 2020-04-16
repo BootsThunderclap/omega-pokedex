@@ -15,7 +15,7 @@ export class PokeapiService {
     );
   }
 
-  item(schemaName: string, id: string) {
+  item(schemaName: string, id: number) {
     return this.http.get<any>(`${environment.pokeapi_url}/${schemaName}/${id}`);
   }
 }

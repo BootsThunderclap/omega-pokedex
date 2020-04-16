@@ -1,0 +1,30 @@
+<p-breadcrumb [model]="breadcrumb" [home]="home"></p-breadcrumb>
+<ng-container *ngIf="encounterMethod">
+  <h3 class="mt-2 mb-2">{{ encounterMethod!.name | titlecase }}</h3>
+  <p-card styleClass="mb-2">
+    <div class="row">
+      <div class="col-12 col-md-3 mb-3">
+        <h2>ID</h2>
+        <div>{{ encounterMethod!.id }}</div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Order</h2>
+        <div>
+          {{ encounterMethod!.order }}
+        </div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Names</h2>
+        <div *ngFor="let name of encounterMethod!.names">
+          <a [routerLink]="['/utility/languages', name.language.url | listItemId]">{{
+            name.language.name | uppercase
+          }}</a>
+          - {{ name.name }}
+        </div>
+      </div>
+    </div>
+  </p-card>
+</ng-container>
+<ng-container *ngIf="errors.length">
+  <p-messages [(value)]="errors" [closable]="false"></p-messages>
+</ng-container>

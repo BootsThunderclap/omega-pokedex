@@ -83,6 +83,13 @@ export interface SuperContestEffect {
   moves: NamedAPIResource[];
 }
 
+export interface EncounterMethod {
+  id: number;
+  name: string;
+  order: number;
+  names: Name[];
+}
+
 export interface Name {
   name: string;
   language: NamedAPIResource;

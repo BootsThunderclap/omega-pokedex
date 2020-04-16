@@ -11,9 +11,16 @@ import { ListItemIdPipeModule } from '@app/pipes/list-item-id-pipe/list-item-id-
 import { ProgressBarModule } from 'primeng/progressbar';
 import { MessagesModule } from 'primeng/messages';
 import { ContestEffectsComponent } from './contest-effects/contest-effects.component';
+import { ContestEffectDetailComponent } from './contest-effect-detail/contest-effect-detail.component';
+import { FillPipeModule } from '@app/pipes/fill-pipe/fill-pipe.module';
 
 @NgModule({
-  declarations: [ContestTypesComponent, ContestTypeDetailComponent, ContestEffectsComponent],
+  declarations: [
+    ContestTypesComponent,
+    ContestTypeDetailComponent,
+    ContestEffectsComponent,
+    ContestEffectDetailComponent,
+  ],
   imports: [
     CommonModule,
     ContestsRoutingModule,
@@ -23,6 +30,7 @@ import { ContestEffectsComponent } from './contest-effects/contest-effects.compo
     ListItemIdPipeModule,
     ProgressBarModule,
     MessagesModule,
+    FillPipeModule,
   ],
 })
 export class ContestsModule {}

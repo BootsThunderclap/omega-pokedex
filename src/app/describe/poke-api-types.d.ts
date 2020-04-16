@@ -68,7 +68,26 @@ export interface ContestName {
   language: NamedAPIResource;
 }
 
+export interface ContestEffect {
+  id: number;
+  appeal: number;
+  jam: number;
+  effect_entries: Effect[];
+  flavor_text_entries: FlavorText[];
+}
+
 export interface Name {
   name: string;
   language: NamedAPIResource;
+}
+
+export interface Effect {
+  effect: string;
+  language: NamedAPIResource;
+}
+
+export interface FlavorText {
+  flavor_text: string;
+  language: NamedAPIResource;
+  version: NamedAPIResource;
 }

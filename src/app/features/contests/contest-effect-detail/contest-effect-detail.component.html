@@ -1,0 +1,41 @@
+<p-breadcrumb [model]="breadcrumb" [home]="home"></p-breadcrumb>
+<ng-container *ngIf="contestEffect">
+  <h3 class="mt-2 mb-2">{{ contestEffect!.id }}</h3>
+  <p-card styleClass="mb-2">
+    <div class="row">
+      <div class="col-12 col-md-3 mb-3">
+        <h2>ID</h2>
+        <div>{{ contestEffect!.id }}</div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Appeal</h2>
+        <i *ngFor="let i of contestEffect!.appeal | fill" class="fas fa-heart"></i>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Effect Entries</h2>
+        <div *ngFor="let effectEntry of contestEffect!.effect_entries">
+          <a [routerLink]="['/utility/languages', effectEntry.language.url | listItemId]">{{
+            effectEntry.language.name | uppercase
+          }}</a>
+          - {{ effectEntry.effect }}
+        </div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Flavor Text Entries</h2>
+        <div *ngFor="let flavorTextEntry of contestEffect!.flavor_text_entries">
+          <a [routerLink]="['/utility/languages', flavorTextEntry.language.url | listItemId]">{{
+            flavorTextEntry.language.name | uppercase
+          }}</a>
+          - {{ flavorTextEntry.flavor_text }}
+        </div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Jam</h2>
+        <i *ngFor="let i of contestEffect!.jam | fill" class="far fa-heart"></i>
+      </div>
+    </div>
+  </p-card>
+</ng-container>
+<ng-container *ngIf="errors.length">
+  <p-messages [(value)]="errors" [closable]="false"></p-messages>
+</ng-container>

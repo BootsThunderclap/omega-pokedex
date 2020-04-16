@@ -36,6 +36,12 @@ export class AppMenuComponent implements OnInit {
           { label: 'Berry Flavors', routerLink: '/berries/berry-flavors' },
         ],
       },
+      {
+        label: 'Contests',
+        icon: 'fas fa-fw fa-burn',
+        routerLink: ['/contests'],
+        items: [{ label: 'Contest Types', routerLink: ['/contests/contest-types'] }],
+      },
     ];
   }
 }

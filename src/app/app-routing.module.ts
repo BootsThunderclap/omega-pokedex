@@ -11,6 +11,7 @@ const routes: Routes = [
     path: 'berries',
     loadChildren: () => import('./features/berries/berries.module').then(m => m.BerriesModule),
   },
+  { path: 'contests', loadChildren: () => import('./features/contests/contests.module').then(m => m.ContestsModule) },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];
 

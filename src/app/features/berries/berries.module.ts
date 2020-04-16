@@ -13,9 +13,10 @@ import { FormsModule } from '@angular/forms';
 import { BerryFirmnessesComponent } from './berry-firmnesses/berry-firmnesses.component';
 import { ListPageModule } from '@app/layouts/list-page/list-page.module';
 import { BerryFirmnessDetailComponent } from './berry-firmness-detail/berry-firmness-detail.component';
+import { BerryFlavorsComponent } from './berry-flavors/berry-flavors.component';
 
 @NgModule({
-  declarations: [BerriesComponent, BerryDetailComponent, BerryFirmnessesComponent, BerryFirmnessDetailComponent],
+  declarations: [BerriesComponent, BerryDetailComponent, BerryFirmnessesComponent, BerryFirmnessDetailComponent, BerryFlavorsComponent],
   imports: [
     CommonModule,
     BerriesRoutingModule,

@@ -13,6 +13,7 @@ import { MessagesModule } from 'primeng/messages';
 import { ContestEffectsComponent } from './contest-effects/contest-effects.component';
 import { ContestEffectDetailComponent } from './contest-effect-detail/contest-effect-detail.component';
 import { FillPipeModule } from '@app/pipes/fill-pipe/fill-pipe.module';
+import { SuperContestEffectsComponent } from './super-contest-effects/super-contest-effects.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FillPipeModule } from '@app/pipes/fill-pipe/fill-pipe.module';
     ContestTypeDetailComponent,
     ContestEffectsComponent,
     ContestEffectDetailComponent,
+    SuperContestEffectsComponent,
   ],
   imports: [
     CommonModule,

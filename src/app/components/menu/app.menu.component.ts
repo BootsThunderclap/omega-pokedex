@@ -43,6 +43,7 @@ export class AppMenuComponent implements OnInit {
         items: [
           { label: 'Contest Types', routerLink: ['/contests/contest-types'] },
           { label: 'Contest Effects', routerLink: ['/contests/contest-effects'] },
+          { label: 'Super Contest Effects', routerLink: ['/contests/super-contest-effects'] },
         ],
       },
     ];

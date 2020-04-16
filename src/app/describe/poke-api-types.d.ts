@@ -55,6 +55,19 @@ export interface BerryFlavor {
   names: Name[];
 }
 
+export interface ContestType {
+  id: number;
+  name: string;
+  berry_flavor: NamedAPIResource;
+  names: ContestName[];
+}
+
+export interface ContestName {
+  name: string;
+  color: string;
+  language: NamedAPIResource;
+}
+
 export interface Name {
   name: string;
   language: NamedAPIResource;

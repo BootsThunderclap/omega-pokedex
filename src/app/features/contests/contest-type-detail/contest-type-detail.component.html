@@ -1,0 +1,32 @@
+<p-breadcrumb [model]="breadcrumb" [home]="home"></p-breadcrumb>
+<ng-container *ngIf="contestType">
+  <h3 class="mt-2 mb-2">{{ contestType!.name | titlecase }}</h3>
+  <p-card styleClass="mb-2">
+    <div class="row">
+      <div class="col-12 col-md-3 mb-3">
+        <h2>ID</h2>
+        <div>{{ contestType!.id }}</div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Berry Flavor</h2>
+        <div>
+          <a [routerLink]="['/berries/berry-flavors', contestType!.berry_flavor.url | listItemId]">{{
+            contestType!.berry_flavor.name | titlecase
+          }}</a>
+        </div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Names</h2>
+        <div *ngFor="let name of contestType!.names">
+          <a [routerLink]="['/utility/languages', name.language.url | listItemId]">{{
+            name.language.name | uppercase
+          }}</a>
+          <span [style.color]="name.color"> - {{ name.name }}</span>
+        </div>
+      </div>
+    </div>
+  </p-card>
+</ng-container>
+<ng-container *ngIf="errors.length">
+  <p-messages [(value)]="errors" [closable]="false"></p-messages>
+</ng-container>

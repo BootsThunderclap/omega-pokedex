@@ -97,6 +97,13 @@ export interface EncounterCondition {
   values: NamedAPIResource[];
 }
 
+export interface EncounterConditionValue {
+  id: number;
+  name: string;
+  condition: NamedAPIResource;
+  names: Name[];
+}
+
 export interface Name {
   name: string;
   language: NamedAPIResource;

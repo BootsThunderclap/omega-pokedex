@@ -12,9 +12,10 @@ import { MessagesModule } from 'primeng/messages';
 import { EncounterConditionsComponent } from './encounter-conditions/encounter-conditions.component';
 import { EncounterConditionDetailComponent } from './encounter-condition-detail/encounter-condition-detail.component';
 import { EncounterConditionValuesComponent } from './encounter-condition-values/encounter-condition-values.component';
+import { EncounterConditionValueDetailComponent } from './encounter-condition-value-detail/encounter-condition-value-detail.component';
 
 @NgModule({
-  declarations: [EncounterMethodsComponent, EncounterMethodDetailComponent, EncounterConditionsComponent, EncounterConditionDetailComponent, EncounterConditionValuesComponent],
+  declarations: [EncounterMethodsComponent, EncounterMethodDetailComponent, EncounterConditionsComponent, EncounterConditionDetailComponent, EncounterConditionValuesComponent, EncounterConditionValueDetailComponent],
   imports: [
     CommonModule,
     EncountersRoutingModule,

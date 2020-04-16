@@ -6,6 +6,7 @@ import { ListItemResolver } from '@app/resolvers/list-item.resolver';
 import { EncounterConditionsComponent } from './encounter-conditions/encounter-conditions.component';
 import { EncounterConditionDetailComponent } from './encounter-condition-detail/encounter-condition-detail.component';
 import { EncounterConditionValuesComponent } from './encounter-condition-values/encounter-condition-values.component';
+import { EncounterConditionValueDetailComponent } from './encounter-condition-value-detail/encounter-condition-value-detail.component';
 
 const routes: Routes = [
   { path: 'encounter-methods', component: EncounterMethodsComponent },
@@ -23,6 +24,12 @@ const routes: Routes = [
     data: { schema: 'encounter-condition' },
   },
   { path: 'encounter-condition-values', component: EncounterConditionValuesComponent },
+  {
+    path: 'encounter-condition-values/:recordId',
+    component: EncounterConditionValueDetailComponent,
+    resolve: { resolvedItem: ListItemResolver },
+    data: { schema: 'encounter-condition-value' },
+  },
   { path: '', redirectTo: 'encounter-methods', pathMatch: 'full' },
 ];
 

@@ -9,9 +9,10 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { CardModule } from 'primeng/card';
 import { ListItemIdPipeModule } from '@app/pipes/list-item-id-pipe/list-item-id-pipe.module';
 import { MessagesModule } from 'primeng/messages';
+import { EncounterConditionsComponent } from './encounter-conditions/encounter-conditions.component';
 
 @NgModule({
-  declarations: [EncounterMethodsComponent, EncounterMethodDetailComponent],
+  declarations: [EncounterMethodsComponent, EncounterMethodDetailComponent, EncounterConditionsComponent],
   imports: [
     CommonModule,
     EncountersRoutingModule,

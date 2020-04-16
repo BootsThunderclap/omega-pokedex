@@ -50,7 +50,10 @@ export class AppMenuComponent implements OnInit {
         label: 'Encounters',
         icon: 'fas fa-fw fa-bomb',
         routerLink: ['/encounters'],
-        items: [{ label: 'Encounter Methods', routerLink: ['/encounters/encounter-methods'] }],
+        items: [
+          { label: 'Encounter Methods', routerLink: ['/encounters/encounter-methods'] },
+          { label: 'Encounter Conditions', routerLink: ['/encounters/encounter-conditions'] },
+        ],
       },
     ];
   }

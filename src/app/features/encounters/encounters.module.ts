@@ -11,9 +11,10 @@ import { ListItemIdPipeModule } from '@app/pipes/list-item-id-pipe/list-item-id-
 import { MessagesModule } from 'primeng/messages';
 import { EncounterConditionsComponent } from './encounter-conditions/encounter-conditions.component';
 import { EncounterConditionDetailComponent } from './encounter-condition-detail/encounter-condition-detail.component';
+import { EncounterConditionValuesComponent } from './encounter-condition-values/encounter-condition-values.component';
 
 @NgModule({
-  declarations: [EncounterMethodsComponent, EncounterMethodDetailComponent, EncounterConditionsComponent, EncounterConditionDetailComponent],
+  declarations: [EncounterMethodsComponent, EncounterMethodDetailComponent, EncounterConditionsComponent, EncounterConditionDetailComponent, EncounterConditionValuesComponent],
   imports: [
     CommonModule,
     EncountersRoutingModule,

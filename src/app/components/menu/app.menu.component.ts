@@ -53,6 +53,7 @@ export class AppMenuComponent implements OnInit {
         items: [
           { label: 'Encounter Methods', routerLink: ['/encounters/encounter-methods'] },
           { label: 'Encounter Conditions', routerLink: ['/encounters/encounter-conditions'] },
+          { label: 'Encounter Condition Values', routerLink: ['/encounters/encounter-condition-values'] },
         ],
       },
     ];

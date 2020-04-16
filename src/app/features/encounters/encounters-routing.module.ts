@@ -5,6 +5,7 @@ import { EncounterMethodDetailComponent } from './encounter-method-detail/encoun
 import { ListItemResolver } from '@app/resolvers/list-item.resolver';
 import { EncounterConditionsComponent } from './encounter-conditions/encounter-conditions.component';
 import { EncounterConditionDetailComponent } from './encounter-condition-detail/encounter-condition-detail.component';
+import { EncounterConditionValuesComponent } from './encounter-condition-values/encounter-condition-values.component';
 
 const routes: Routes = [
   { path: 'encounter-methods', component: EncounterMethodsComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
     resolve: { resolvedItem: ListItemResolver },
     data: { schema: 'encounter-condition' },
   },
+  { path: 'encounter-condition-values', component: EncounterConditionValuesComponent },
   { path: '', redirectTo: 'encounter-methods', pathMatch: 'full' },
 ];
 

@@ -76,6 +76,13 @@ export interface ContestEffect {
   flavor_text_entries: FlavorText[];
 }
 
+export interface SuperContestEffect {
+  id: number;
+  appeal: number;
+  flavor_text_entries: FlavorText[];
+  moves: NamedAPIResource[];
+}
+
 export interface Name {
   name: string;
   language: NamedAPIResource;

@@ -1,0 +1,34 @@
+<p-breadcrumb [model]="breadcrumb" [home]="home"></p-breadcrumb>
+<ng-container *ngIf="superContestEffect">
+  <h3 class="mt-2 mb-2">{{ superContestEffect!.id }}</h3>
+  <p-card styleClass="mb-2">
+    <div class="row">
+      <div class="col-12 col-md-3 mb-3">
+        <h2>ID</h2>
+        <div>{{ superContestEffect!.id }}</div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Appeal</h2>
+        <i *ngFor="let i of superContestEffect!.appeal | fill" class="fas fa-heart"></i>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Flavor Text Entries</h2>
+        <div *ngFor="let flavorTextEntry of superContestEffect!.flavor_text_entries">
+          <a [routerLink]="['/utility/languages', flavorTextEntry.language.url | listItemId]">{{
+            flavorTextEntry.language.name | uppercase
+          }}</a>
+          - {{ flavorTextEntry.flavor_text }}
+        </div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Moves</h2>
+        <div *ngFor="let move of superContestEffect!.moves">
+          <a [routerLink]="['/moves/moves', move.url | listItemId]">{{ move.name | titlecase }}</a>
+        </div>
+      </div>
+    </div>
+  </p-card>
+</ng-container>
+<ng-container *ngIf="errors.length">
+  <p-messages [(value)]="errors" [closable]="false"></p-messages>
+</ng-container>

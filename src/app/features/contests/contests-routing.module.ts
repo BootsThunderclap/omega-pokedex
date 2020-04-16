@@ -6,6 +6,7 @@ import { ListItemResolver } from '@app/resolvers/list-item.resolver';
 import { ContestEffectsComponent } from './contest-effects/contest-effects.component';
 import { ContestEffectDetailComponent } from './contest-effect-detail/contest-effect-detail.component';
 import { SuperContestEffectsComponent } from './super-contest-effects/super-contest-effects.component';
+import { SuperContestEffectDetailComponent } from './super-contest-effect-detail/super-contest-effect-detail.component';
 
 const routes: Routes = [
   { path: 'contest-types', component: ContestTypesComponent },
@@ -23,6 +24,12 @@ const routes: Routes = [
     data: { schema: 'contest-effect' },
   },
   { path: 'super-contest-effects', component: SuperContestEffectsComponent },
+  {
+    path: 'super-contest-effects/:recordId',
+    component: SuperContestEffectDetailComponent,
+    resolve: { resolvedItem: ListItemResolver },
+    data: { schema: 'super-contest-effect' },
+  },
   { path: '', redirectTo: 'contest-types', pathMatch: 'full' },
 ];
 

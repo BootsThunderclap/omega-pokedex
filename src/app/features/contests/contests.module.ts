@@ -14,6 +14,7 @@ import { ContestEffectsComponent } from './contest-effects/contest-effects.compo
 import { ContestEffectDetailComponent } from './contest-effect-detail/contest-effect-detail.component';
 import { FillPipeModule } from '@app/pipes/fill-pipe/fill-pipe.module';
 import { SuperContestEffectsComponent } from './super-contest-effects/super-contest-effects.component';
+import { SuperContestEffectDetailComponent } from './super-contest-effect-detail/super-contest-effect-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SuperContestEffectsComponent } from './super-contest-effects/super-cont
     ContestEffectsComponent,
     ContestEffectDetailComponent,
     SuperContestEffectsComponent,
+    SuperContestEffectDetailComponent,
   ],
   imports: [
     CommonModule,

@@ -90,6 +90,13 @@ export interface EncounterMethod {
   names: Name[];
 }
 
+export interface EncounterCondition {
+  id: number;
+  name: string;
+  names: Name[];
+  values: NamedAPIResource[];
+}
+
 export interface Name {
   name: string;
   language: NamedAPIResource;

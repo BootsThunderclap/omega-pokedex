@@ -137,6 +137,13 @@ export interface EvolutionDetail {
   turn_upside_down: boolean;
 }
 
+export interface EvolutionTrigger {
+  id: number;
+  name: string;
+  names: Name[];
+  pokemon_species: NamedAPIResource[];
+}
+
 export interface Name {
   name: string;
   language: NamedAPIResource;

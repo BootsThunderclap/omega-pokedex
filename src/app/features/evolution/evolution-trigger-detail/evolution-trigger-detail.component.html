@@ -1,0 +1,32 @@
+<p-breadcrumb [model]="breadcrumb" [home]="home"></p-breadcrumb>
+<ng-container *ngIf="evolutionTrigger">
+  <h3 class="mt-2 mb-2">{{ evolutionTrigger!.name | titlecase }}</h3>
+  <p-card styleClass="mb-2">
+    <div class="row">
+      <div class="col-12 col-md-3 mb-3">
+        <h2>ID</h2>
+        <div>{{ evolutionTrigger!.id }}</div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Names</h2>
+        <div *ngFor="let name of evolutionTrigger!.names">
+          <a [routerLink]="['/utility/languages', name.language.url | listItemId]">{{
+            name.language.name | uppercase
+          }}</a>
+          - {{ name.name }}
+        </div>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h2>Pokemon Species</h2>
+        <div *ngFor="let pokemon_species of evolutionTrigger!.pokemon_species">
+          <a [routerLink]="['/pokemon/pokemon-species', pokemon_species.url | listItemId]">{{
+            pokemon_species.name | titlecase
+          }}</a>
+        </div>
+      </div>
+    </div>
+  </p-card>
+</ng-container>
+<ng-container *ngIf="errors.length">
+  <p-messages [(value)]="errors" [closable]="false"></p-messages>
+</ng-container>

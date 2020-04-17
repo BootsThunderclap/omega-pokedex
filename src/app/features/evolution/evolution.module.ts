@@ -13,9 +13,10 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { FormsModule } from '@angular/forms';
 import { FieldsetModule } from 'primeng/fieldset';
 import { EvolutionTriggersComponent } from './evolution-triggers/evolution-triggers.component';
+import { EvolutionTriggerDetailComponent } from './evolution-trigger-detail/evolution-trigger-detail.component';
 
 @NgModule({
-  declarations: [EvolutionChainsComponent, EvolutionChainDetailComponent, EvolutionTriggersComponent],
+  declarations: [EvolutionChainsComponent, EvolutionChainDetailComponent, EvolutionTriggersComponent, EvolutionTriggerDetailComponent],
   imports: [
     CommonModule,
     EvolutionRoutingModule,

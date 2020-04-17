@@ -60,7 +60,10 @@ export class AppMenuComponent implements OnInit {
         label: 'Evolution',
         icon: 'fas fa-fw fa-level-up-alt',
         routerLink: ['/evolution'],
-        items: [{ label: 'Evolution Chains', routerLink: ['/evolution/evolution-chains'] }],
+        items: [
+          { label: 'Evolution Chains', routerLink: ['/evolution/evolution-chains'] },
+          { label: 'Evolution Triggers', routerLink: ['/evolution/evolution-triggers'] },
+        ],
       },
     ];
   }

@@ -25,7 +25,6 @@
             "aot": true,
             "assets": ["src/assets", "src/favicon.ico"],
             "styles": [
-              "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "node_modules/primeng/resources/themes/nova-light/theme.css",
               "src/assets/layout/css/layout.css",
@@ -36,7 +35,7 @@
               "node_modules/@fullcalendar/timegrid/main.min.css",
               "node_modules/quill/dist/quill.snow.css",
               "src/assets/demo/css/codehighlight.css",
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": [
               "node_modules/chart.js/dist/Chart.js",

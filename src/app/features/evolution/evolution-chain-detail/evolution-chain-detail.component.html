@@ -1,0 +1,162 @@
+<p-breadcrumb [model]="breadcrumb" [home]="home"></p-breadcrumb>
+<ng-container *ngIf="evolutionChain">
+  <h1 class="mt-2 mb-2">{{ evolutionChain!.id }}</h1>
+  <p-card styleClass="mb-2">
+    <div class="row">
+      <div class="col-12 col-md-3 mb-3">
+        <h3>ID</h3>
+        <div>{{ evolutionChain!.id }}</div>
+      </div>
+      <div *ngIf="evolutionChain!.baby_trigger_item" class="col-12 col-md-3 mb-3">
+        <h3>Baby Trigger Item</h3>
+        <div>
+          <a [routerLink]="['/items/items', evolutionChain!.baby_trigger_item.url | listItemId]">{{
+            evolutionChain!.baby_trigger_item.name | titlecase
+          }}</a>
+        </div>
+      </div>
+    </div>
+  </p-card>
+  <h2>Chain</h2>
+  <ng-container *ngTemplateOutlet="chainLinkRef; context: { chain_link: evolutionChain!.chain }"></ng-container>
+</ng-container>
+<ng-container *ngIf="errors.length">
+  <p-messages [(value)]="errors" [closable]="false"></p-messages>
+</ng-container>
+
+<ng-template #chainLinkRef let-chainLink="chain_link">
+  <p-card styleClass="mb-2">
+    <div class="row">
+      <div class="col-12 col-md-3 mb-3">
+        <h3>Is Baby</h3>
+        <p-checkbox binary="true" readonly="true" [(ngModel)]="chainLink.is_baby"></p-checkbox>
+      </div>
+      <div class="col-12 col-md-3 mb-3">
+        <h3>Species</h3>
+        <div>
+          <a [routerLink]="['/pokemon/pokemon-species', chainLink.species.url | listItemId]">{{
+            chainLink.species.name | titlecase
+          }}</a>
+        </div>
+      </div>
+    </div>
+    <p-fieldset
+      *ngFor="let evolution_detail of chainLink.evolution_details"
+      legend="Evolution Detail"
+      toggleable="true"
+    >
+      <div class="row">
+        <div *ngIf="evolution_detail.item" class="col-12 col-md-3 mb-3">
+          <h3>Item</h3>
+          <div>
+            <a [routerLink]="['/items/items', evolution_detail.item.url | listItemId]">{{
+              evolution_detail.item.name | titlecase
+            }}</a>
+          </div>
+        </div>
+        <div *ngIf="evolution_detail.trigger" class="col-12 col-md-3 mb-3">
+          <h3>Trigger</h3>
+          <div>
+            <a [routerLink]="['/evolution/evolution_triggers', evolution_detail.trigger.url | listItemId]">{{
+              evolution_detail.trigger.name | titlecase
+            }}</a>
+          </div>
+        </div>
+        <div *ngIf="evolution_detail.gender" class="col-12 col-md-3 mb-3">
+          <h3>Gender</h3>
+          <div>{{ evolution_detail.gender }}</div>
+        </div>
+        <div *ngIf="evolution_detail.held_item" class="col-12 col-md-3 mb-3">
+          <h3>Held Item</h3>
+          <div>
+            <a [routerLink]="['/items/items', evolution_detail.held_item.url | listItemId]">{{
+              evolution_detail.held_item.name
+            }}</a>
+          </div>
+        </div>
+        <div *ngIf="evolution_detail.known_move" class="col-12 col-md-3 mb-3">
+          <h3>Known Move</h3>
+          <div>
+            <a [routerLink]="['/moves/moves', evolution_detail.known_move.url | listItemId]">{{
+              evolution_detail.known_move.name
+            }}</a>
+          </div>
+        </div>
+        <div *ngIf="evolution_detail.known_move_type" class="col-12 col-md-3 mb-3">
+          <h3>Known Move Type</h3>
+          <div>
+            <a [routerLink]="['/pokemon/types', evolution_detail.known_move_type.url | listItemId]">{{
+              evolution_detail.known_move_type.name
+            }}</a>
+          </div>
+        </div>
+        <div *ngIf="evolution_detail.location" class="col-12 col-md-3 mb-3">
+          <h3>Location</h3>
+          <div>
+            <a [routerLink]="['/locations/locations', evolution_detail.location.url | listItemId]">{{
+              evolution_detail.location.name
+            }}</a>
+          </div>
+        </div>
+        <div *ngIf="evolution_detail.min_level" class="col-12 col-md-3 mb-3">
+          <h3>Minimum Level</h3>
+          <div>{{ evolution_detail.min_level }}</div>
+        </div>
+        <div *ngIf="evolution_detail.min_happiness" class="col-12 col-md-3 mb-3">
+          <h3>Minimum Happiness</h3>
+          <div>{{ evolution_detail.min_happiness }}</div>
+        </div>
+        <div *ngIf="evolution_detail.min_beauty" class="col-12 col-md-3 mb-3">
+          <h3>Minimum Beauty</h3>
+          <div>{{ evolution_detail.min_beauty }}</div>
+        </div>
+        <div class="col-12 col-md-3 mb-3">
+          <h3>Needs Overworld Rain</h3>
+          <p-checkbox binary="true" readonly="true" [(ngModel)]="evolution_detail.needs_overworld_rain"></p-checkbox>
+        </div>
+        <div *ngIf="evolution_detail.party_species" class="col-12 col-md-3 mb-3">
+          <h3>Party Species</h3>
+          <div>
+            <a [routerLink]="['/pokemon/pokemon-species', evolution_detail.party_species.url | listItemId]">{{
+              evolution_detail.party_species.name
+            }}</a>
+          </div>
+        </div>
+        <div *ngIf="evolution_detail.party_type" class="col-12 col-md-3 mb-3">
+          <h3>Party Type</h3>
+          <div>
+            <a [routerLink]="['/pokemon/types', evolution_detail.party_type.url | listItemId]">{{
+              evolution_detail.party_type.name
+            }}</a>
+          </div>
+        </div>
+        <div *ngIf="evolution_detail.relative_physical_stats" class="col-12 col-md-3 mb-3">
+          <h3>Relative Physical Stats</h3>
+          <div>{{ evolution_detail.relative_physical_stats }}</div>
+        </div>
+        <div *ngIf="evolution_detail.time_of_day" class="col-12 col-md-3 mb-3">
+          <h3>Time of Day</h3>
+          <div>{{ evolution_detail.time_of_day }}</div>
+        </div>
+        <div *ngIf="evolution_detail.trade_species" class="col-12 col-md-3 mb-3">
+          <h3>Trade Species</h3>
+          <div>
+            <a [routerLink]="['/pokemon/pokemon-species', evolution_detail.trade_species.url | listItemId]">{{
+              evolution_detail.trade_species.name
+            }}</a>
+          </div>
+        </div>
+        <div *ngIf="evolution_detail.turn_upside_down" class="col-12 col-md-3 mb-3">
+          <h3>Turn 3DS Upside Down</h3>
+          <p-checkbox binary="true" readonly="true" [(ngModel)]="evolution_detail.turn_upside_down"></p-checkbox>
+        </div>
+      </div>
+    </p-fieldset>
+  </p-card>
+  <ng-container *ngIf="chainLink.evolves_to.length">
+    <div class="text-center"><i class="fas fa-3x fa-arrow-down"></i></div>
+  </ng-container>
+  <ng-container *ngFor="let evolves_to of chainLink.evolves_to">
+    <ng-container *ngTemplateOutlet="chainLinkRef; context: { chain_link: evolves_to }"></ng-container>
+  </ng-container>
+</ng-template>
